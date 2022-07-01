@@ -19,7 +19,7 @@ export default class Server {
         this.middlewares()
         this.routes()
 
-        const port = process.env.SERVER_PORT || 3000
+        const port = process.env.SERVER_PORT
         this.server.listen(port, () => {
             console.log(`${Date(Date.now())} Node server started in port: ${port}`)
         })
@@ -57,7 +57,7 @@ export default class Server {
             res.json({
                 status: "I'm alive",
                 msg: "With great power comes great responsibility",
-                port: process.env.SERVER_PORT || 3000,
+                port: process.env.SERVER_PORT,
                 you: req.clientIp
             })
         })
